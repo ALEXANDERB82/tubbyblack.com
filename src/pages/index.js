@@ -75,8 +75,8 @@ class HomeIndex extends React.Component {
     }
 
     render() {
-        const siteTitle = "Gatsby Starter - Strata"
-        const siteDescription = "Site description"
+        const siteTitle = "Tubby Black.com"
+        const siteDescription = "Pittsburgh rapper Tubby Black's Website"
 
         return (
             <Layout>
@@ -98,7 +98,7 @@ class HomeIndex extends React.Component {
                     </section>
 
                     <section id="two">
-                        <h2>Recent Work</h2>
+                        <h2>Music</h2>
 
                         <Gallery images={DEFAULT_IMAGES.map(({ id, src, thumbnail, caption, description }) => ({
                             src,
