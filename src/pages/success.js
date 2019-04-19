@@ -2,12 +2,12 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import Layout from '../components/layout'
 
-import sakura from '../assets/images/sakura.jpg'
+import success from '../assets/images/success.jpg'
 
 const Success = props => (
   <Layout>
     <Helmet>
-      <title>Success Page</title>
+      <title>Tubby Black.com</title>
       <meta name="description" content="Success Page" />
     </Helmet>
 
@@ -15,12 +15,13 @@ const Success = props => (
       <section id="one">
         <div className="inner">
           <header className="major">
-            <h1>Success/Thank You Page</h1>
+            <h1>Thanks for htting me up</h1>
           </header>
           <span className="image main">
-            <img src={sakura} alt="" />
+            <img src={success} alt="" />
           </span>
-          <p>Thank you for contacting us!</p>
+          <p>I'll get back to you soon!</p>
+          <li><a href="#" className="button">Go Back</a></li>
         </div>
       </section>
     </div>
