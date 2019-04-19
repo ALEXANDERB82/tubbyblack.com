@@ -117,12 +117,7 @@ class HomeIndex extends React.Component {
                     <section id="three">
                         <h2>Hit Me Up</h2>
                         <p>If you need to get in thouch with me send me an email below.</p>
-                        <form
-                        name="contact"
-                        method="post"
-                        data-netlify="true"
-                        data-netlify-honeypot="bot-field"
-                        >
+                        <form name="contact" method="post" action="/success" data-netlify="true" data-netlify-honeypot="bot-field">
                         <input type="hidden" name="bot-field" />
                         <input type="hidden" name="form-name" value="contact" />
                         <div className="row">
