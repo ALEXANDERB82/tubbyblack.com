@@ -95,7 +95,6 @@ class HomeIndex extends React.Component {
                         </header>
                         <p>I am simply a person who likes to make music. I have benn playing many different instruments from a young age. Honestly my favortie thing about music is writing lyrics. Lyrics give you a chance to speak your mind and let people know what and how you feel, but it also gives you a chance to connect with other people. I am from Pittsburgh, PA and I am gonna make some dope music that will change the world.</p>
                         <ul className="actions">
-                            <li><a href="#" className="button">Learn More</a></li>
                         </ul>
                     </section>
 
@@ -110,13 +109,13 @@ class HomeIndex extends React.Component {
                         }))} />
 
                         <ul className="actions">
-                            <li><a href="#" className="button">Full Portfolio</a></li>
+                            <li><a href="#" className="button">All Music</a></li>
                         </ul>
                     </section>
 
                     <section id="three">
                         <h2>Hit Me Up</h2>
-                        <p>If you need to get in thouch with me send me an email below.</p>
+                        <p>If you need to get in thouch with me send me an message below.</p>
                         <form name="contact" method="post" action="/success" data-netlify="true" data-netlify-honeypot="bot-field">
                         <input type="hidden" name="bot-field" />
                         <input type="hidden" name="form-name" value="contact" />
@@ -145,7 +144,7 @@ class HomeIndex extends React.Component {
                                     </li>
                                     <li>
                                         <h3 className="icon fa-envelope-o"><span className="label">Email</span></h3>
-                                        <a href="#">tubbyblack14@gmail.com</a>
+                                        tubbyblack14@gmail.com
                                     </li>
                                 </ul>
                             </div>
