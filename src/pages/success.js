@@ -22,7 +22,7 @@ const Success = props => (
             <img src={success} alt="" />
           </span>
           <p>I'll get back to you soon!</p>
-          <a href="index.js" className="button">Go Back</a>
+          <a href="index.html" className="button">Go Back</a>
         </div>
       </section>
     </div>
