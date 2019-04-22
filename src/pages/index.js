@@ -109,7 +109,7 @@ class HomeIndex extends React.Component {
                         }))} />
 
                         <ul className="actions">
-                            <li><a href="#" className="button">All Music</a></li>
+                            <li><a href="https://soundcloud.com/tubby-black/tracks" target="_blank" className="button">All Music</a></li>
                         </ul>
                     </section>
 
