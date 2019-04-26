@@ -19,20 +19,22 @@ import full04 from '../assets/images/fulls/04.jpg'
 import full05 from '../assets/images/fulls/05.jpg'
 import full06 from '../assets/images/fulls/06.jpg'
 
-];
+import { Link } from "gatsby"
+
 const DEFAULT_IMAGES = [
-    { id: '1', src: full01, thumbnail: thumb01, caption: 'Photo 1', description: 'Lorem ipsum dolor sit amet nisl sed nullam feugiat.'},
-    { id: '2', src: full02, thumbnail: thumb02, caption: 'Photo 2', description: 'Lorem ipsum dolor sit amet nisl sed nullam feugiat.'},
-    { id: '3', src: full03, thumbnail: thumb03, caption: 'Photo 3', description: 'Lorem ipsum dolor sit amet nisl sed nullam feugiat.'},
-    { id: '4', src: full04, thumbnail: thumb04, caption: 'Photo 4', description: 'Lorem ipsum dolor sit amet nisl sed nullam feugiat.'},
-    { id: '5', src: full05, thumbnail: thumb05, caption: 'Photo 5', description: 'Lorem ipsum dolor sit amet nisl sed nullam feugiat.'},
-    { id: '6', src: full06, thumbnail: thumb06, caption: 'Photo 6', description: 'Lorem ipsum dolor sit amet nisl sed nullam feugiat.'}
+    { id: '1', src: full01, thumbnail: thumb01, caption: 'Love, Me. Vol.2(Prod.Mors)', description: <a href="https://soundcloud.com/tubby-black/love-me-vol-2" target="_blank">Listen Here</a>},
+    { id: '2', src: full02, thumbnail: thumb02, caption: 'Virtuous Tw(o)o(Prod. Beatowski)', description: <a href="https://soundcloud.com/tubby-black/virtuous-tw-o-o" target="_blank">Listen Here</a>},
+    { id: '3', src: full03, thumbnail: thumb03, caption: 'End to End(Prod.Potsu)', description: <a href="https://soundcloud.com/tubby-black/end-to-end" target="_blank">Listen Here</a>},
+    { id: '4', src: full04, thumbnail: thumb04, caption: 'Lovely Lives', description: <a href="https://soundcloud.com/tubby-black/lovely-lives" target="_blank">Listen Here</a>},
+    { id: '5', src: full05, thumbnail: thumb05, caption: 'You Feel?(Prod.30HertzBeats)', description: <a href="https://soundcloud.com/tubby-black/you-feel" target="_blank">Listen Here</a>},
+    { id: '6', src: full06, thumbnail: thumb06, caption: 'Never Felt the Love', description: <a href="https://soundcloud.com/tubby-black/love-me-vol-2" target="_blank">Listen Here</a>}
 ];
 
 class HomeIndex extends React.Component {
 
     constructor() {
         super();
+
 
         this.state = {
             lightboxIsOpen: false,
