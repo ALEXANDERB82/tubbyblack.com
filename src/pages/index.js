@@ -27,7 +27,7 @@ const DEFAULT_IMAGES = [
     { id: '3', src: full03, thumbnail: thumb03, caption: 'End to End(Prod.Potsu)', description: <a href="https://soundcloud.com/tubby-black/end-to-end" target="_blank">Listen Here</a>},
     { id: '4', src: full04, thumbnail: thumb04, caption: 'Lovely Lives', description: <a href="https://soundcloud.com/tubby-black/lovely-lives" target="_blank">Listen Here</a>},
     { id: '5', src: full05, thumbnail: thumb05, caption: 'You Feel?(Prod.30HertzBeats)', description: <a href="https://soundcloud.com/tubby-black/you-feel" target="_blank">Listen Here</a>},
-    { id: '6', src: full06, thumbnail: thumb06, caption: 'Never Felt the Love', description: <a href="https://soundcloud.com/tubby-black/love-me-vol-2" target="_blank">Listen Here</a>}
+    { id: '6', src: full06, thumbnail: thumb06, caption: 'Never Felt the Love', description: <a href="https://soundcloud.com/tubby-black/never-felt-the-loveprod-illuid-haller" target="_blank">Listen Here</a>}
 ];
 
 class HomeIndex extends React.Component {
