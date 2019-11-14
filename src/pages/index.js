@@ -1,81 +1,54 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-
 import Layout from '../components/layout'
-// import Lightbox from 'react-images'
-import Gallery from '../components/Gallery'
+import PropTypes from 'prop-types';
+import { PlayButton, Progress, Icons, Timer, VolumeControl, Cover} from 'react-soundplayer/components';
+import { withSoundCloudAudio } from 'react-soundplayer/addons';
 
-import thumb01 from '../assets/images/thumbs/01.jpg'
-import thumb02 from '../assets/images/thumbs/02.jpg'
-import thumb03 from '../assets/images/thumbs/03.jpg'
-import thumb04 from '../assets/images/thumbs/04.jpg'
-import thumb05 from '../assets/images/thumbs/05.jpg'
-import thumb06 from '../assets/images/thumbs/06.jpg'
+const clientId = 'wBZbydoVnaCcBic8oQsle3MlRFFnd2H4&limit=3&offset=0&linked_partitioning=1&app_version=1565000058&app_locale=en';
+const resolveUrl = 'https://soundcloud.com/tubby-black/god-prod-by-cxdy';
+const GODbg = './assets/images/god.jpg';
 
-import full01 from '../assets/images/fulls/01.jpg'
-import full02 from '../assets/images/fulls/02.jpg'
-import full03 from '../assets/images/fulls/03.jpg'
-import full04 from '../assets/images/fulls/04.jpg'
-import full05 from '../assets/images/fulls/05.jpg'
-import full06 from '../assets/images/fulls/06.jpg'
+const {
+    SoundCloudLogoSVG,
+    PlayIconSVG,
+    PauseIconSVG,
+    NextIconSVG,
+    PrevIconSVG
+  } = Icons;
 
-import { Link } from "gatsby"
 
-const DEFAULT_IMAGES = [
-    { id: '1', src: full01, thumbnail: thumb01, caption: 'Love, Me. Vol.2 (Prod.Mors)', description: <a href="https://soundcloud.com/tubby-black/love-me-vol-2" target="_blank">Listen Here</a>},
-    { id: '2', src: full02, thumbnail: thumb02, caption: 'Virtuous Tw(o)o (Prod. Beatowski)', description: <a href="https://soundcloud.com/tubby-black/virtuous-tw-o-o" target="_blank">Listen Here</a>},
-    { id: '3', src: full03, thumbnail: thumb03, caption: 'End to End (Prod.Potsu)', description: <a href="https://soundcloud.com/tubby-black/end-to-end" target="_blank">Listen Here</a>},
-    { id: '4', src: full04, thumbnail: thumb04, caption: 'Lovely Lives', description: <a href="https://soundcloud.com/tubby-black/lovely-lives" target="_blank">Listen Here</a>},
-    { id: '5', src: full05, thumbnail: thumb05, caption: 'You Feel? (Prod.30HertzBeats)', description: <a href="https://soundcloud.com/tubby-black/you-feel" target="_blank">Listen Here</a>},
-    { id: '6', src: full06, thumbnail: thumb06, caption: 'Never Felt the Love', description: <a href="https://soundcloud.com/tubby-black/never-felt-the-loveprod-illuid-haller" target="_blank">Listen Here</a>}
-];
+const Player = withSoundCloudAudio(props => {
+    let { track, duration, currentTime } = props;
+    
+    return (
+    <div className="py2 white bg-cover bg-top rounded relative" style={{backgroundImage: 'url(${GODbg})'}}>
+        <div className="bg-black absolute top-0 right-0 left-0 bottom-0 muted" />
+            <div className="center py4 relative z1">
+                <h3 className="h4 nowrap caps mb0">{track ? track.user.username : ''}</h3>
+                <h2 className="h0 nowrap caps m0">{track ? track.title : ''}</h2>
+            </div>
+            <div className="flex flex-center px2 relative z1">
+                <PlayButton
+                className="flex-none h2 mr2 button button-transparent button-grow rounded"
+                {...props} />
+                <VolumeControl
+                className='mr2 flex flex-center'
+                buttonClassName="flex-none h2 button button-transparent button-grow rounded"
+                rangeClassName="custom-track-bg"
+                {...props} />
+                <Progress
+                className="flex-auto bg-darken-3 rounded"
+                innerClassName="rounded-left bg-white"
+                value={(currentTime / duration) * 100 || 0}
+                {...props} />
+        </div>
+    </div>
+    )
+});
+
 
 class HomeIndex extends React.Component {
-
-    constructor() {
-        super();
-
-
-        this.state = {
-            lightboxIsOpen: false,
-            currentImage: 0,
-        };
-
-        this.closeLightbox = this.closeLightbox.bind(this);
-        this.gotoNext = this.gotoNext.bind(this);
-        this.gotoPrevious = this.gotoPrevious.bind(this);
-        this.openLightbox = this.openLightbox.bind(this);
-        this.handleClickImage = this.handleClickImage.bind(this);
-    }
-
-    openLightbox (index, event) {
-        event.preventDefault();
-        this.setState({
-            currentImage: index,
-            lightboxIsOpen: true,
-        });
-    }
-    closeLightbox () {
-        this.setState({
-            currentImage: 0,
-            lightboxIsOpen: false,
-        });
-    }
-    gotoPrevious () {
-        this.setState({
-            currentImage: this.state.currentImage - 1,
-        });
-    }
-    gotoNext () {
-        this.setState({
-            currentImage: this.state.currentImage + 1,
-        });
-    }
-    handleClickImage () {
-        if (this.state.currentImage === this.props.images.length - 1) return;
-
-        this.gotoNext();
-    }
 
     render() {
         const siteTitle = "Tubby Black.com"
@@ -102,15 +75,13 @@ class HomeIndex extends React.Component {
                     <section id="two">
                         <h2>Music</h2>
 
-                        <Gallery images={DEFAULT_IMAGES.map(({ id, src, thumbnail, caption, description}) => ({
-                            src,
-                            thumbnail,
-                            caption,
-                            description
-                        }))} />
+                        <Player
+                            clientId={clientId}
+                            resolveUrl={resolveUrl}
+                            onReady={() => console.log('track is loaded!')} />
 
                         <ul className="actions">
-                            <li><a href="https://soundcloud.com/tubby-black/tracks" target="_blank" className="button">All Music</a></li>
+                            <li><a href="https://soundcloud.com/tubby-black/tracks" target="_blank" rel="noopener noreferrer" className="button">All Music</a></li>
                         </ul>
                     </section>
 
